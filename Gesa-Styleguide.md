@@ -4,9 +4,6 @@ Other Style Guides
 
   - [Angular Style Guide](https://angular.io/guide/styleguide)
   - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
-  - [CSS-in-JavaScript](css-in-javascript/)
-  - [CSS & Sass](https://github.com/airbnb/css)
-  - [Ruby](https://github.com/airbnb/ruby)
 
 ## Table of Contents
 
