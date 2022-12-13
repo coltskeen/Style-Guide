@@ -1,9 +1,55 @@
+<div id="top"></div>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h2 align="center">A Hobbit's Developer Style Guide</h2>
+
+  <p align="center">
+    A style guide for the layman developer.
+    <br />
+    <a href="https://github.com/coltskeen/Style-Guide/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/coltskeen/Style-Guide/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
 # Style Guide
 
-Other Style Guides
-
-  - [Angular Style Guide](https://angular.io/guide/styleguide)
-  - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
+> ### "Arguments over style are pointless. There should be a style guide, and you should follow it"
+> &emsp;_Rebecca_ _Murphey_
 
 ## Table of Contents
 
@@ -38,8 +84,6 @@ Other Style Guides
   1. [Testing](#testing)
   1. [Performance](#performance)
   1. [Resources](#resources)
-
-
   1. [Copyright](#copyright)
   1. [Amendments](#amendments)
 
