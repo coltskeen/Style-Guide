@@ -1,4 +1,4 @@
-# Gesa Credit Union Style Guide
+# Style Guide
 
 Other Style Guides
 
@@ -65,34 +65,36 @@ Other Style Guides
 **Read This**
 
   - [Standard ECMA-262](https://www.ecma-international.org/ecma-262/6.0/index.html)
+  - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+  - [C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/?WT.mc_id=dotnet-35129-website)
 
 **Tools**
 
-  - Code Style Linters
-    - [ESlint](https://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
-    - [JSHint](https://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
-  - Neutrino Preset - [@neutrinojs/airbnb](https://neutrinojs.org/packages/airbnb/)
+  - Code Style Linter - [ESlint](https://eslint.org/)
+  - Partner Server-side Framework - [NestJs](https://docs.nestjs.com/)
+  - Client-side Framework - [Angular](https://angular.io/docs)
+  - Internal Server-side Frameworks
+    - [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)
+    - [ASP.NET](https://learn.microsoft.com/en-us/aspnet/core/?WT.mc_id=dotnet-35129-website&view=aspnetcore-7.0)
+  - Nest Testing
+    - [Jest](https://jestjs.io/docs/getting-started)
+  - Angular Testing
+    - [Karma](https://angular.io/guide/testing)
+    - [Jasmine](https://jasmine.github.io/pages/docs_home.html)
 
 **Other Style Guides**
 
-  - [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
-  - [Google JavaScript Style Guide (Old)](https://google.github.io/styleguide/javascriptguide.xml)
-  - [jQuery Core Style Guidelines](https://contribute.jquery.org/style-guide/js/)
+  - [Angular Style Guide](https://angular.io/guide/styleguide)
+  - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
-  - [StandardJS](https://standardjs.com)
 
 **Other Styles**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
-  - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
-  - [Multiple var statements in JavaScript, not superfluous](https://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
 **Further Reading**
 
-  - [Understanding JavaScript Closures](https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
-  - [Basic JavaScript for the impatient programmer](https://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
-  - [You Might Not Need jQuery](https://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
@@ -115,28 +117,12 @@ Other Style Guides
   - [Eloquent JavaScript](https://eloquentjavascript.net/) - Marijn Haverbeke
   - [You Don’t Know JS: ES6 & Beyond](https://shop.oreilly.com/product/0636920033769.do) - Kyle Simpson
 
-**Blogs**
-
-  - [JavaScript Weekly](https://javascriptweekly.com/)
-  - [JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/)
-  - [Bocoup Weblog](https://bocoup.com/weblog)
-  - [Adequately Good](https://www.adequatelygood.com/)
-  - [NCZOnline](https://www.nczonline.net/)
-  - [Perfection Kills](http://perfectionkills.com/)
-  - [Ben Alman](https://benalman.com/)
-  - [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
-  - [nettuts](https://code.tutsplus.com/?s=javascript)
-
-**Podcasts**
-
-  - [JavaScript Air](https://javascriptair.com/)
-  - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Copyright
 
-Copyright (c) 2022 Gesa Credit Union
+Copyright (c) 2022 The Wizard
 
 **[⬆ back to top](#table-of-contents)**
 
