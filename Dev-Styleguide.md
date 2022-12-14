@@ -18,40 +18,28 @@
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-# Style Guide
-
 > ### "Arguments over style are pointless. There should be a style guide, and you should follow it"
 > &emsp;_Rebecca_ _Murphey_
 
-## Table of Contents
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary id="table-of-contents">Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+      </ul>
+    <li><a href="#angular-style-guide">Angular Style Guide</a></li>
+    <li><a href="#c#-style-guide">C# Style Guide</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#copyright">Copyright</a></li>
+    <li><a href="#amendments">Amendments</a></li>
+  </ol>
+</details>
+
 
   1. [Types](#types)
   1. [References](#references)
@@ -65,7 +53,6 @@
   1. [Modules](#modules)
   1. [Iterators and Generators](#iterators-and-generators)
   1. [Properties](#properties)
-  1. [Variables](#variables)
   1. [Hoisting](#hoisting)
   1. [Comparison Operators & Equality](#comparison-operators--equality)
   1. [Blocks](#blocks)
@@ -83,11 +70,7 @@
   1. [Standard Library](#standard-library)
   1. [Testing](#testing)
   1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [Copyright](#copyright)
-  1. [Amendments](#amendments)
 
-  1. [Variable](#variable-and-function)
   1. [Class](#class)
   1. [Interface](#interface)
   1. [Type](#type)
@@ -102,6 +85,48 @@
   1. [File Names](#filename)
   1. [`type` vs `interface`](#type-vs-interface)
   1. [`==` or `===`](#-or-)
+
+<!-- ABOUT THE PROJECT -->
+# About The Project
+
+Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
+
+
+**[⬆ back to top](#table-of-contents)**
+
+# TypeScript Style Guide
+
+## Variables
+
+  * **Rule:** Always use ```const``` or ```let``` to declare variables. Never use ```var```.
+  * **Reason:** Using ```var``` will result in global variables. We want to avoid polluting the global namespace. Also ```const``` and ```let``` are block scoped, like variables in most other languages. ```var``` in TypeScript is function scoped, which can cause difficult to understand bugs. 
+
+    ```ts
+    // bad
+    superPower = new SuperPower();
+
+    // good
+    const superPower = new SuperPower();
+    ```
+
+  * **Rule:** Use `camelCase` for variable and function names
+  * **Reason:** Conventional TypeScript
+
+    ```ts
+    // bad
+    var SuperPower;
+    function SuperPowerFunc() { }
+
+    // good
+    var superPower;
+    function superPowerFunc() { }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+# Angular Style Guide
+
+# C# Style Guide
 
 ## Resources
 
@@ -173,3 +198,5 @@ Copyright (c) 2022 The Wizard
 ## Amendments
 
 To propose changes to this style guide please follow the Gesa Development Team's standard submission procross via a pull request and peer review.
+
+**[⬆ back to top](#table-of-contents)**
