@@ -31,6 +31,7 @@
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
         <li><a href="#variables">Variables</a></li>
+        <li><a href="#classes-and-interfaces">Classes and Interfaces</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
@@ -121,6 +122,53 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
     var superPower;
     function superPowerFunc() { }
     ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Classes and Interfaces
+* **Rule:** Use `PascalCase` for class names but `camelCase` of class members and methods
+* **Reason:** This is fairly convential TypeScript.
+
+```ts
+// bad
+class foo { }
+```
+
+```ts
+// good
+class Foo { }
+```
+
+```ts
+// bad
+class Foo {
+    Bar: number;
+    Baz() { }
+}
+```
+
+```ts
+// good
+class Foo {
+    bar: number;
+    baz() { }
+}
+```
+
+
+* **Rule:** **Don't** prefix interfaces with `I`
+* **Reason:** Unconventional. `lib.d.ts` defines important interfaces without an `I` (e.g. Window, Document etc). Official TypeScript style defines interfaces without an `I`.
+
+```ts
+// bad
+interface IFoo {
+}
+```
+```ts
+// good
+interface Foo {
+}
+```
 
 **[⬆ back to top](#table-of-contents)**
 
