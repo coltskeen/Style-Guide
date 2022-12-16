@@ -31,7 +31,8 @@
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
         <li><a href="#variables">Variables</a></li>
-        <li><a href="#classes-and-interfaces">Classes and Interfaces</a></li>
+        <li><a href="#classes-interfaces-types-and-namespaces">Classes, Interfaces, Types, and Namespaces</a></li>
+        <li><a href="#enums">Enums</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
@@ -42,7 +43,7 @@
 </details>
 
 
-  1. [Types](#types)
+
   1. [References](#references)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
@@ -125,50 +126,106 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
 
 **[⬆ back to top](#table-of-contents)**
 
-## Classes and Interfaces
-* **Rule:** Use `PascalCase` for class names but `camelCase` of class members and methods
+## Classes, Interfaces, Types, and Namespaces
+* **Rule:** Use `PascalCase` for names but `camelCase` for members and methods
 * **Reason:** This is fairly convential TypeScript.
 
-```ts
-// bad
-class foo { }
-```
+  ```ts
+  // bad
+  class foo { }
 
-```ts
-// good
-class Foo { }
-```
+  // good
+  class Foo { }
+  ```
 
-```ts
-// bad
-class Foo {
-    Bar: number;
-    Baz() { }
-}
-```
+  ```ts
+  // bad
+  class Foo {
+      Bar: number;
+      Baz() { }
+  }
 
-```ts
-// good
-class Foo {
-    bar: number;
-    baz() { }
-}
-```
+  // good
+  class Foo {
+      bar: number;
+      baz() { }
+  }
+  ```
 
+  ```ts
+  // bad
+  type user = {
+    FirstName: string,
+    LastName: string,
+  }
+
+  // good
+  type User = {
+    firstName: string,
+    lastName: string,
+  }
+
+  ```
 
 * **Rule:** **Don't** prefix interfaces with `I`
 * **Reason:** Unconventional. `lib.d.ts` defines important interfaces without an `I` (e.g. Window, Document etc). Official TypeScript style defines interfaces without an `I`.
 
-```ts
-// bad
-interface IFoo {
-}
-```
-```ts
-// good
-interface Foo {
-}
-```
+  ```ts
+  // bad
+  interface IFoo {
+  }
+
+  // good
+  interface Foo {
+  }
+  ```
+
+* **Rule:** Utilize the strongly typed nature of TypeScript wherever possible for functions, variables, and other data structures. Avoid the use of `any`.
+* **Reason:** Our applications must be stable, reliable, scalable, and easily maintainable. Using types guards aids in catching bugs that otherwise would be missed, reducing support requirements. Annotated types also help to clarify written code for other developers.
+
+  ```ts
+  // bad
+  let status;
+
+  // bad
+  let statusCode: any;
+
+  // good
+  let status: string;
+  ```
+
+  ```ts
+  // bad
+  function subtract(foo, bar) {
+    return foo - bar;
+  }
+
+  // good
+  function subtract(foo: number, bar: number): number {
+    return foo - bar;
+  }
+  ```
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## Enums
+* **Rule:** Use `PascalCase` for names AND members
+* **Reason:** This is convential TypeScript.
+
+  ```ts
+  // bad
+  enum color {
+    red
+  }
+  ```
+
+  ```ts
+  // good
+  enum Color {
+    Red
+  }
+  ```
 
 **[⬆ back to top](#table-of-contents)**
 
