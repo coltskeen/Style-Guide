@@ -10,7 +10,7 @@
   <h2 align="center">A Hobbit's Developer Style Guide</h2>
 
   <p align="center">
-    A style guide for the layman developer.
+    A style guide for the layman developer. **In Development**
     <br />
     <a href="https://github.com/coltskeen/Style-Guide/issues">Report Bug</a>
     ·
