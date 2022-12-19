@@ -30,9 +30,13 @@
     </li>
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
+        <li><a href="#naming-conventions">Naming Conventions</a></li>
+        <li><a href="#comments">Comments</a></li>
         <li><a href="#variables">Variables</a></li>
+        <li><a href="#constants">Constants</a></li>
         <li><a href="#classes-interfaces-types-and-namespaces">Classes, Interfaces, Types, and Namespaces</a></li>
         <li><a href="#enums">Enums</a></li>
+        <li><a href="#semicolons">Semicolons</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
@@ -62,7 +66,6 @@
   1. [Comments](#comments)
   1. [Whitespace](#whitespace)
   1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
   1. [Type Casting & Coercion](#type-casting--coercion)
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
@@ -74,16 +77,6 @@
   1. [Performance](#performance)
 
 
-  1. [`null` vs. `undefined`](#null-vs-undefined)
-  1. [Formatting](#formatting)
-  1. [Single vs. Double Quotes](#quotes)
-  1. [Tabs vs. Spaces](#spaces)
-  1. [Use semicolons](#semicolons)
-  1. [Annotate Arrays as `Type[]`](#array)
-  1. [File Names](#filename)
-  1. [`type` vs `interface`](#type-vs-interface)
-  1. [`==` or `===`](#-or-)
-
 <!-- ABOUT THE PROJECT -->
 # About The Project
 
@@ -94,6 +87,68 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
 
 # TypeScript Style Guide
 
+
+## Naming Conventions
+
+  * **Rule:** Names _must_ be descriptive and clear to a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project. 
+  * **Reason:** Ensure code readability and reduces time needed for explanation and/or familiarization.
+
+    ```ts
+    // bad
+    const supPwr = new SuperPower();
+
+    // good
+    const superPower = new SuperPower();
+    ```
+
+  * **Rule:** Names that are too long can decrease readability. So omit irrelevant details, words that are obvious from the type declaration, and words that are clear from the context.
+  * **Reason:** TypeScript expresses information in types, so names _should not_ be decorate with information that is included in the type.
+
+    ```ts
+    // bad - too specific
+    Monster finalBattleMostDangerousBossMonster; 
+    Payments nonTypicalMonthlyPayments;
+
+    // good 
+    Monster boss; 
+    Payments payments;
+
+    
+    // bad - the type tells us what these variables are:
+    String nameString; 
+    List<datetime> holidayDateList;
+
+    // good
+    String name; 
+    List<datetime> holidays;
+
+    
+    // bad - repeating the context:
+    class AnnualHolidaySale {int annualSaleRebate; boolean promoteHolidaySale() {...}}
+
+    // good
+    class AnnualHolidaySale {int rebate; boolean promote() {...}}
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Comments
+
+  * **Rule:** Use `/** JSDoc */` comments for documentation and multi-line comments, i.e. comments a user of the code should read.
+  * **Rule:** Use `// line comments` for implementation comments and single-line comments, i.e. comments that only concern the implementation of the code itself.
+  * **Reason:** JSDoc comments are understood by tools (such as editors and documentation generators), while ordinary comments are only for other humans.
+
+    ```ts
+    /**
+     * Multiple lines of JSDoc text are written here,
+     * wrapped normally.
+     * @param {number} arg A number to do something to.
+     */
+     function doSomething(arg) { … }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
 ## Variables
 
   * **Rule:** Always use ```const``` or ```let``` to declare variables. Never use ```var```.
@@ -101,7 +156,7 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
 
     ```ts
     // bad
-    superPower = new SuperPower();
+    const superPower = new SuperPower();
 
     // good
     const superPower = new SuperPower();
@@ -119,6 +174,38 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
     var superPower;
     function superPowerFunc() { }
     ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Constants
+
+* **Rule:** Write constants in CONSTANT_CASE
+* **Reason:** Constant case is used when a value is intended to not be changed. Note that you can also include `static readonly` property in a class.
+
+  ```ts
+  // bad
+  const unitTypes = {
+    'days' = 'd',
+    'months' = 'm',
+    'years' = 'y'
+  }
+
+  // good
+  const UNIT_TYPES = {
+    'days' = 'd',
+    'months' = 'm',
+    'years' = 'y'
+  }
+
+  // good
+  class Foo {
+    private static readonly MY_SPECIAL_NUMBER = 5;
+
+    bar() {
+      return 2 * Foo.MY_SPECIAL_NUMBER;
+    }
+  }
+  ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -214,13 +301,26 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
   enum color {
     red
   }
-  ```
-
-  ```ts
+ 
   // good
   enum Color {
     Red
   }
+  ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Semicolons
+
+* **Rule:** Do not use Automatic Semicolon Insertion (ASI). Always explicit terminate statements with a semicolon.
+* **Reason:** This prevents bugs.
+
+  ```ts
+  // bad
+  const foo: Foo = await service.Create()
+ 
+  // good
+  const foo: Foo = await service.Create();
   ```
 
 **[⬆ back to top](#table-of-contents)**
