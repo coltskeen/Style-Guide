@@ -37,6 +37,7 @@
         <li><a href="#classes-interfaces-types-and-namespaces">Classes, Interfaces, Types, and Namespaces</a></li>
         <li><a href="#enums">Enums</a></li>
         <li><a href="#semicolons">Semicolons</a></li>
+        <li><a href="#whitespace">Whitespace</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
@@ -48,33 +49,10 @@
 
 
 
-  1. [References](#references)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
+
   1. [Destructuring](#destructuring)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
-  1. [Classes & Constructors](#classes--constructors)
-  1. [Modules](#modules)
-  1. [Iterators and Generators](#iterators-and-generators)
-  1. [Properties](#properties)
-  1. [Hoisting](#hoisting)
-  1. [Comparison Operators & Equality](#comparison-operators--equality)
-  1. [Blocks](#blocks)
-  1. [Control Statements](#control-statements)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Events](#events)
-  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
-  1. [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
-  1. [Standard Library](#standard-library)
-  1. [Testing](#testing)
-  1. [Performance](#performance)
+
+
 
 
 <!-- ABOUT THE PROJECT -->
@@ -145,6 +123,34 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
      * @param {number} arg A number to do something to.
      */
      function doSomething(arg) { … }
+    ```
+
+  * **Rule:** Start all comments with a space.
+  * **Reason:** It's easier to read.
+
+    ```ts
+    //bad
+    const boolean = true;
+
+    // good
+    const boolean = true;
+    ```
+
+  * **Rule:** Use `// FIXME:` to annotate problems that need to be figured out and `// TODO:` to annotate solutions to problems that need to be implemented.
+  * **Reason:** Help other developers quickly understand whether you're pointing out a problem that needs to be revisited or suggesting a solution that needs implementing.
+
+    ```ts
+    class Calculator extends Abacus {
+      constructor() {
+        super();
+
+        // FIXME: shouldn’t use a global here
+        total = 0;
+
+        // TODO: sum should be configurable by an options param
+        this.sum = 0;
+      }
+    }
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -322,6 +328,86 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
   // good
   const foo: Foo = await service.Create();
   ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Whitespace
+
+  * **Rule:** Place 1 space before the opening parenthesis in control statements (if, while etc.) but no space between the argument list and the function name in function calls and declarations.
+  * **Reason:** Readability and consistency.
+
+    ```ts
+    // bad
+    if(isJedi) {
+      fight ();
+    }
+
+    // good
+    if (isJedi) {
+      fight();
+    }
+
+    // bad
+    function fight () {
+      console.log ('Swooosh!');
+    }
+
+    // good
+    function fight() {
+      console.log('Swooosh!');
+    }
+    ```
+
+  * **Rule:** Set off operators with spaces.
+  * **Reason:** Readability and consistency.
+
+    ```ts
+    // bad
+    const x=y+5;
+
+    // good
+    const x = y + 5;
+    ```
+
+
+  * **Rule:** Add spaces inside curly braces but not parenthesis or brackets.
+  * **Reason:** Readability and consistency.
+
+    ```ts
+    // bad
+    if ( foo ) { }
+    const foo = [ 1, 2, 3 ]
+    const foo = {clark: 'kent'};
+
+    // good
+    if (foo) { }
+    const foo = [1, 2, 3]
+    const foo = { clark: 'kent' };
+    ```
+
+  * **Rule:**  Avoid having lines of code that are longer than 100 characters (including whitespace). 
+  * **Reason:** This ensures readability and maintainability.
+
+    ```ts
+    // bad
+    const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
+
+    // good
+    const foo = jsonData
+      && jsonData.foo
+      && jsonData.foo.bar
+      && jsonData.foo.bar.baz
+      && jsonData.foo.bar.baz.quux
+      && jsonData.foo.bar.baz.quux.xyzzy;
+
+    // even better
+    const foo = jsonData
+      ?.foo
+      ?.bar
+      ?.baz
+      ?.quux
+      ?.xyzzy;
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
