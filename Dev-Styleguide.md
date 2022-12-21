@@ -28,6 +28,9 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
+    <ul>
+      <li><a href="#note-on-consistency">Note on Consistency</a></li>
+    </ul>
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
         <li><a href="#naming-conventions">Naming Conventions</a></li>
@@ -38,6 +41,8 @@
         <li><a href="#enums">Enums</a></li>
         <li><a href="#semicolons">Semicolons</a></li>
         <li><a href="#whitespace">Whitespace</a></li>
+        <li><a href="#exceptions">Exceptions</a></li>
+        <li><a href="#iterating-objects">Iterating objects</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
@@ -49,21 +54,19 @@
 
 
 
-
-  1. [Destructuring](#destructuring)
-
-
-
 <!-- ABOUT THE PROJECT -->
 # About The Project
 
 Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
 
+## Note on Consistency
+
+For any style question that isn't settled definitively by this styleguide, do what the other code in the same file is already doing (be consistent). If that doesn't resolve the question, consider emulating the other files in the same directory. At all times, remember that code reviewers should not focus on simply enforcing the rules in this styleguide, but instead focus on improving overall code quality.
+
 
 **[⬆ back to top](#table-of-contents)**
 
 # TypeScript Style Guide
-
 
 ## Naming Conventions
 
@@ -294,6 +297,28 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
   }
   ```
 
+  * **Rule:** Do not use namespaces unless required to interface with external, third party code. In all other cases, use modules with imports and exports.
+  * **Reason:** Namespaces are disallowed.
+
+    ```ts
+    // bad
+    namespace MySpace {
+      function getSocial() {}
+    } 
+    ```
+
+  * **Rule:** By default annotate types on variables, classes, etc. However, sometimes using the `any` type is legitmate. In such cases, add a comment that suppresses the lint warning, and document why it is legitimate.
+  * **Reason:** For quick understanding by other devs and for maintainability purposes.
+
+    ```ts
+    // This is an intentionally unsafe partial mock becuase ...
+    // tslint:disable-next-line:no-any
+    const mockBookService = ({get() { return mockBook; }} as any) as BookService;
+    // Shopping cart is not used in this test
+    // tslint:disable-next-line:no-any
+    const component = new MyComponent(mockBookService, /* unused ShoppingCart */ null as any);
+    ```
+
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -406,6 +431,72 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
       ?.baz
       ?.quux
       ?.xyzzy;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Exceptions
+
+  * **Rule:** Always use `new Error()` instead of `Error()` or throwing arbitrary values when instantiating expections.
+  * **Reason:** More consistent with how objects are instantiated.
+
+    ```ts
+    // bad - does not get a stack trace filled in
+    throw 'error message';
+
+    // bad 
+    throw Error('error message');
+
+    // good
+    throw new Error('error message');
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Iterating objects
+
+  * **Rule:** Do not iterate over objects or arrays with `for (... in ... )`. Use `for (... of ...)`, `forEach`, or regular `for` loops.
+  * **Reason:** It's error prone and can include enumerable properties from the prototype chain or give the array indices as strings instead of values.
+
+    ```ts
+    // bad - x could come from some parent prototype!
+    for (const x in someObj) { }
+
+    // bad 
+    for (const x in someArray) { }
+
+    // good
+    for (const x of Object.keys(someObj)) { }
+
+    // good
+    for (let i = 0; i < someArr.length; i++) { }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## Imports and Exports
+
+  * **Rule:** Do not use `require` for imports.
+  * **Reason:** It's the old syntax. Use ES6 module syntax.
+
+    ```ts
+    // bad 
+    const x = require('myDep');
+
+    // good
+    import x from './myDep';
+    ```
+
+  * **Rule:** Use named exports in all code.
+  * **Reason:** Ensures all imports follow a uniform pattern and helps woth central maintenance.
+
+    ```ts
+    // bad 
+    export default class MyClass { }
+
+    // good
+    export class MyClass { }
     ```
 
 **[⬆ back to top](#table-of-contents)**
