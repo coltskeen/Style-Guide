@@ -947,6 +947,20 @@ This section is derived from the official [Microsoft C# Documentation](https://l
 
 ## Layout Conventions
 
+  * **Rules:** 
+      * When in doubt use the default Code Editor settings.
+      * Write only one statement or declaration per line.
+      * If continuation lines are not indented automatically, indent them one tab stop (four spaces).
+      * Add at least one blank line between method definitions and property definitions.
+      * Use parentheses to make clauses in an expression apparent, as shown in the following code.
+  * **Reason:** Microsoft C# convention
+
+    ```c#
+    if ((val1 > val2) && (val1 > val3))
+    {
+        // Take appropriate action.
+    }
+    ```
 
 
 **[⬆ back to top](#table-of-contents)**
