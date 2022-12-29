@@ -45,6 +45,13 @@
         <li><a href="#iterating-objects">Iterating objects</a></li>
       </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
+      <ul>
+        <li><a href="#single-responsibility-principle">Single Responsibility Principle</a></li>
+        <li><a href="#angular-naming-conventions">Angular Naming Conventions</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
@@ -67,6 +74,8 @@ For any style question that isn't settled definitively by this styleguide, do wh
 **[⬆ back to top](#table-of-contents)**
 
 # TypeScript Style Guide
+
+The information in this section is derived from the official [Google TypeScript Guide](https://google.github.io/styleguide/tsguide.html), the [AirBnb style guide](https://github.com/airbnb/javascript), and the [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/styleguide) styleguide. This guide contains highlights of the common rules and patterns that a developer should consider following - or have a really good reason as to why they are breaking from the norm. 
 
 ## Naming Conventions
 
@@ -502,6 +511,110 @@ For any style question that isn't settled definitively by this styleguide, do wh
 **[⬆ back to top](#table-of-contents)**
 
 # Angular Style Guide
+
+This section is derived from the official [Angular Style Guide](https://angular.io/guide/styleguide). It contains highlights that Angular developers should consider following - unless you have a significant reason to deviate. Again this is not comprehensive of all rules recommended in the official style guide but the spark notes version. 
+
+## Single Responsibility Principle
+
+  * **Rule:** Define one thing, such as a service or component, per file, and consider limiting files to 400 lines of code.
+  * **Reason:** Avoids bugs and makes code easier to read and maintain.
+
+    ```ts
+    // bad - the model should be separated to its own file
+    import { Component, OnInit } from '@angular/core';
+
+    interface Hero {
+      id: number;
+      name: string;
+    }
+
+    @Component({
+      selector: 'app-root',
+      template: `
+          <h1>{{title}}</h1>
+          <pre>{{heroes | json}}</pre>
+        `,
+      styleUrls: ['app/app.component.css']
+    })
+    class AppComponent implements OnInit {
+      title = 'Tour of Heroes';
+
+      heroes: Hero[] = [];
+
+      ngOnInit() {
+        getHeroes().then(heroes => (this.heroes = heroes));
+      }
+    }
+    ```
+
+  * **Rule:** Keep functions small. Consider limiting them to no more than 75 lines.
+  * **Reason:** Avoids bugs and makes code easier to read and maintain.
+
+**[⬆ back to top](#table-of-contents)**
+
+## Angular Naming Conventions
+
+  * **Rule:** Be consistent with file names. Use the angular recommended pattern `feature.type.ts`.
+  * **Rule:** Use dashes and dots to separate names. Don't abbreviate the types.
+  * **Reason:** Increases team efficiency by making files clear and easier to find.
+
+    ```ts
+    // bad
+    heroList.component.ts
+    hero-list.comp.ts
+
+    // good
+    hero-list.component.ts
+    ```
+
+  * **Rule:** Class names should be upper camel case and match the name of the file.
+  * **Reason:** Consistent conventions make it easy to quickly identify and reference assets of different types.
+
+    ```ts
+    @Component({ … }) 
+    export class HeroListComponent { } // Filename matches -> hero-list.component.ts
+    ```
+
+  * **Rule:** Do use _dashed-case_ for naming the element selectors of components.
+  * **Reason:** Keeps the element names consistent with the specification for custom elements.
+
+    ```ts
+    // bad
+    @Component({
+      selector: 'tohHeroButton',
+      templateUrl: './hero-button.component.html'
+    })
+    export class HeroButtonComponent {}
+
+    // good
+    @Component({
+      selector: 'toh-hero-button',
+      templateUrl: './hero-button.component.html'
+    })
+    export class HeroButtonComponent {}
+    ```
+
+  * **Rule:** Do use lower camel case for directives selectors.
+  * **Reason:** The Angular HTML parser is case-sensitive and recognizes lower camel case.
+
+    ```ts
+    // good
+    @Directive({
+      selector: '[tohValidate]'
+    })
+    export class ValidateDirective {}
+    ```
+
+  * **Rule:** Unit test file names should be the same as the component they test but with the `.spec` suffix.
+  * **Reason:** Provides pattern matching for `karma` or other test runners.
+
+    ```ts
+    // good
+    hero-list.component.spec.ts
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
 
 # C# Style Guide
 
