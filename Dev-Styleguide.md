@@ -53,7 +53,13 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#lifecycle-hooks">Lifecycle Hooks</a></li>
       </ul>
-    <li><a href="#c#-style-guide">C# Style Guide</a></li>
+    <li><a href="#c♯-style-guide">C♯ Style Guide</a></li>
+      <ul>
+        <li><a href="#c♯-naming-conventions">C♯ Naming Conventions</a></li>
+        <li><a href="#layout-conventions">Layout Conventions</a></li>
+        <li><a href="#commenting-conventions">Commenting Conventions</a></li>
+        <li><a href="#language-guidelines">Language Guidelines</a></li>
+      </ul>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
     <li><a href="#amendments">Amendments</a></li>
@@ -822,7 +828,140 @@ _Figure 1: Example Folder Stucture:_
 
 **[⬆ back to top](#table-of-contents)**
 
-# C# Style Guide
+# C♯ Style Guide
+
+This section is derived from the official [Microsoft C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/). It contains highlights that C# developers should consider following - unless you have a significant reason to deviate. Again this is not comprehensive of all rules recommended in the official documentation but the spark notes version. 
+
+## C♯ Naming Conventions
+
+  * **Rule:** Use `PascalCase` when naming a `class`, `record`, or `struct`.
+  * **Reason:** Consistency and readability.
+
+    ```c#
+    // bad
+    public class myClass
+    {
+    }
+
+    // good
+    public class MyClass
+    {
+    }
+    ```
+
+  * **Rule:** Prefix `interfaces` with and `I`.
+  * **Reason:** Clearing indicates to the developer it's an interface.
+
+    ```c#
+    // bad
+    public interface MyInterface
+    {
+    }
+
+    // good
+    public interface IMyInterface
+    {
+    }
+    ```
+
+  * **Rule:** Public members of types should use `PascalCase`.
+  * **Reason:** Consistency and readability.
+
+    ```c#
+    // bad
+    public class Example
+    {
+        // A public field, these should be used sparingly
+        public bool isValid;
+
+        // An init-only property
+        public IWorkerQueue workerQueue { get; init; }
+
+        // An event
+        public event Action eventProcessing;
+
+        // Method
+        public void startEventProcessing()
+        { ... }
+    }
+
+    // good
+    public class Example
+    {
+        // A public field, these should be used sparingly
+        public bool IsValid;
+
+        // An init-only property
+        public IWorkerQueue WorkerQueue { get; init; }
+
+        // An event
+        public event Action EventProcessing;
+
+        // Method
+        public void StartEventProcessing()
+        { ... }
+    }
+    ```
+
+  * **Rules:** 
+      * Use `camelCase` for `private` or `internal` fields and prefix them with and underscore `_`.
+      * When working with `static` fields that are `private` or `internal`, use the `s_` prefix and for thread static use `t_`.
+  * **Reason:** Consistency and readability.
+
+    ```c#
+    // bad
+    public class MyBeeService
+    {
+      private IWorkerBee WorkerBee;
+    }
+
+    // good
+    public class MyBeeService
+    {
+      private IWorkerBee _workerBee;
+    }
+
+    // bad
+    public class MyBeeService
+    {
+      // static fields need the s_
+      private static IWorkerBee _workerBee
+      // thread static requires t_
+      [ThreadStatic]
+      private static TimeSpan _timeSpan;
+    }
+
+    // good
+    public class MyBeeService
+    {
+      // static fields need the s_
+      private static IWorkerBee s_workerBee
+      // thread static requires t_
+      [ThreadStatic]
+      private static TimeSpan t_timeSpan;
+    }
+    ```
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## Layout Conventions
+
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## Commenting Conventions
+
+
+
+**[⬆ back to top](#table-of-contents)**
+
+## Language Guidelines
+
+
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Resources
 
