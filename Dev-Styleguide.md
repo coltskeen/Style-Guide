@@ -48,9 +48,10 @@
       <ul>
         <li><a href="#single-responsibility-principle">Single Responsibility Principle</a></li>
         <li><a href="#angular-naming-conventions">Angular Naming Conventions</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li><a href="#application-structure">Application Structure</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#lifecycle-hooks">Lifecycle Hooks</a></li>
       </ul>
     <li><a href="#c#-style-guide">C# Style Guide</a></li>
     <li><a href="#resources">Resources</a></li>
@@ -123,17 +124,18 @@ The information in this section is derived from the official [Google TypeScript 
 
 ## Comments
 
-  * **Rule:** Use `/** JSDoc */` comments for documentation and multi-line comments, i.e. comments a user of the code should read.
-  * **Rule:** Use `// line comments` for implementation comments and single-line comments, i.e. comments that only concern the implementation of the code itself.
+  * **Rules:** 
+      * Use `/** JSDoc */` comments for documentation and multi-line comments, i.e. comments a user of the code should read.
+      * Use `// line comments` for implementation comments and single-line comments, i.e. comments that only concern the implementation of the code itself.
   * **Reason:** JSDoc comments are understood by tools (such as editors and documentation generators), while ordinary comments are only for other humans.
 
     ```ts
     /**
      * Multiple lines of JSDoc text are written here,
-     * wrapped normally.
-     * @param {number} arg A number to do something to.
-     */
-     function doSomething(arg) { … }
+      * wrapped normally.
+      * @param {number} arg A number to do something to.
+      */
+      function doSomething(arg) { … }
     ```
 
   * **Rule:** Start all comments with a space.
@@ -196,115 +198,116 @@ The information in this section is derived from the official [Google TypeScript 
 
 ## Constants
 
-* **Rule:** Write constants in CONSTANT_CASE
-* **Reason:** Constant case is used when a value is intended to not be changed. Note that you can also include `static readonly` property in a class.
+  * **Rule:** Write constants in CONSTANT_CASE
+  * **Reason:** Constant case is used when a value is intended to not be changed. Note that you can also include `static readonly` property in a class.
 
-  ```ts
-  // bad
-  const unitTypes = {
-    'days' = 'd',
-    'months' = 'm',
-    'years' = 'y'
-  }
-
-  // good
-  const UNIT_TYPES = {
-    'days' = 'd',
-    'months' = 'm',
-    'years' = 'y'
-  }
-
-  // good
-  class Foo {
-    private static readonly MY_SPECIAL_NUMBER = 5;
-
-    bar() {
-      return 2 * Foo.MY_SPECIAL_NUMBER;
+    ```ts
+    // bad
+    const unitTypes = {
+      'days' = 'd',
+      'months' = 'm',
+      'years' = 'y'
     }
-  }
-  ```
+
+    // good
+    const UNIT_TYPES = {
+      'days' = 'd',
+      'months' = 'm',
+      'years' = 'y'
+    }
+
+    // good
+    class Foo {
+      private static readonly MY_SPECIAL_NUMBER = 5;
+
+      bar() {
+        return 2 * Foo.MY_SPECIAL_NUMBER;
+      }
+    }
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Classes, Interfaces, Types, and Namespaces
-* **Rule:** Use `PascalCase` for names but `camelCase` for members and methods
-* **Reason:** This is fairly convential TypeScript.
 
-  ```ts
-  // bad
-  class foo { }
+  * **Rule:** Use `PascalCase` for names but `camelCase` for members and methods
+  * **Reason:** This is fairly convential TypeScript.
 
-  // good
-  class Foo { }
-  ```
+    ```ts
+    // bad
+    class foo { }
 
-  ```ts
-  // bad
-  class Foo {
-      Bar: number;
-      Baz() { }
-  }
+    // good
+    class Foo { }
+    ```
 
-  // good
-  class Foo {
-      bar: number;
-      baz() { }
-  }
-  ```
+    ```ts
+    // bad
+    class Foo {
+        Bar: number;
+        Baz() { }
+    }
 
-  ```ts
-  // bad
-  type user = {
-    FirstName: string,
-    LastName: string,
-  }
+    // good
+    class Foo {
+        bar: number;
+        baz() { }
+    }
+    ```
 
-  // good
-  type User = {
-    firstName: string,
-    lastName: string,
-  }
+    ```ts
+    // bad
+    type user = {
+      FirstName: string,
+      LastName: string,
+    }
 
-  ```
+    // good
+    type User = {
+      firstName: string,
+      lastName: string,
+    }
 
-* **Rule:** **Don't** prefix interfaces with `I`
-* **Reason:** Unconventional. `lib.d.ts` defines important interfaces without an `I` (e.g. Window, Document etc). Official TypeScript style defines interfaces without an `I`.
+    ```
 
-  ```ts
-  // bad
-  interface IFoo {
-  }
+  * **Rule:** **Don't** prefix interfaces with `I`
+  * **Reason:** Unconventional. `lib.d.ts` defines important interfaces without an `I` (e.g. Window, Document etc). Official TypeScript style defines interfaces without an `I`.
 
-  // good
-  interface Foo {
-  }
-  ```
+    ```ts
+    // bad
+    interface IFoo {
+    }
 
-* **Rule:** Utilize the strongly typed nature of TypeScript wherever possible for functions, variables, and other data structures. Avoid the use of `any`.
-* **Reason:** Our applications must be stable, reliable, scalable, and easily maintainable. Using types guards aids in catching bugs that otherwise would be missed, reducing support requirements. Annotated types also help to clarify written code for other developers.
+    // good
+    interface Foo {
+    }
+    ```
 
-  ```ts
-  // bad
-  let status;
+  * **Rule:** Utilize the strongly typed nature of TypeScript wherever possible for functions, variables, and other data structures. Avoid the use of `any`.
+  * **Reason:** Our applications must be stable, reliable, scalable, and easily maintainable. Using types guards aids in catching bugs that otherwise would be missed, reducing support requirements. Annotated types also help to clarify written code for other developers.
 
-  // bad
-  let statusCode: any;
+    ```ts
+    // bad
+    let status;
 
-  // good
-  let status: string;
-  ```
+    // bad
+    let statusCode: any;
 
-  ```ts
-  // bad
-  function subtract(foo, bar) {
-    return foo - bar;
-  }
+    // good
+    let status: string;
+    ```
 
-  // good
-  function subtract(foo: number, bar: number): number {
-    return foo - bar;
-  }
-  ```
+    ```ts
+    // bad
+    function subtract(foo, bar) {
+      return foo - bar;
+    }
+
+    // good
+    function subtract(foo: number, bar: number): number {
+      return foo - bar;
+    }
+    ```
 
   * **Rule:** Do not use namespaces unless required to interface with external, third party code. In all other cases, use modules with imports and exports.
   * **Reason:** Namespaces are disallowed.
@@ -332,35 +335,36 @@ The information in this section is derived from the official [Google TypeScript 
 **[⬆ back to top](#table-of-contents)**
 
 ## Enums
-* **Rule:** Use `PascalCase` for names AND members
-* **Reason:** This is convential TypeScript.
 
-  ```ts
-  // bad
-  enum color {
-    red
-  }
- 
-  // good
-  enum Color {
-    Red
-  }
-  ```
+  * **Rule:** Use `PascalCase` for names AND members
+  * **Reason:** This is convential TypeScript.
+
+    ```ts
+    // bad
+    enum color {
+      red
+    }
+  
+    // good
+    enum Color {
+      Red
+    }
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Semicolons
 
-* **Rule:** Do not use Automatic Semicolon Insertion (ASI). Always explicit terminate statements with a semicolon.
-* **Reason:** This prevents bugs.
+  * **Rule:** Do not use Automatic Semicolon Insertion (ASI). Always explicit terminate statements with a semicolon.
+  * **Reason:** This prevents bugs.
 
-  ```ts
-  // bad
-  const foo: Foo = await service.Create()
- 
-  // good
-  const foo: Foo = await service.Create();
-  ```
+    ```ts
+    // bad
+    const foo: Foo = await service.Create()
+  
+    // good
+    const foo: Foo = await service.Create();
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -554,8 +558,9 @@ This section is derived from the official [Angular Style Guide](https://angular.
 
 ## Angular Naming Conventions
 
-  * **Rule:** Be consistent with file names. Use the angular recommended pattern `feature.type.ts`.
-  * **Rule:** Use dashes and dots to separate names. Don't abbreviate the types.
+  * **Rules:** 
+      * Be consistent with file names. Use the angular recommended pattern `feature.type.ts`.
+      * Use dashes and dots to separate names. Don't abbreviate the types.
   * **Reason:** Increases team efficiency by making files clear and easier to find.
 
     ```ts
@@ -613,8 +618,209 @@ This section is derived from the official [Angular Style Guide](https://angular.
     hero-list.component.spec.ts
     ```
 
+
+
+## Application Structure
+
+  * **Rules:** 
+      * Put all the application's code in the `src` folder but separate out all feature areas within this folder with their own NgModule.
+      * All third party scripts should be stored in another folder (not the `src` folder).
+      * Follow the LIFT principles. Structure the application such that you can **L**ocate code quickly, **I**dentify the code at a glance, keep the **F**lattest structure you can, and **T**ry to be DRY
+      * Create folders by the feature area they represent such as `hero` or `villian`.
+      * Create NgModules for the root module, each feature module, and the shared module. 
+  * **Reason:** Consistency and avoiding clutter in your codebase as you scale the project.
+
+_Figure 1: Example Folder Stucture:_
+
+  ![Compliant Folder Structure Example](./images/AngularFolderStructure.PNG)
+
+
 **[⬆ back to top](#table-of-contents)**
 
+## Components
+
+  * **Rule:** Give components an _element_ selector instead an attribute or class selector.
+  * **Reason:** Easier to recognize that it is a component in the template's html.
+
+    ```ts
+    // bad
+    <div tohHeroButton></div>
+
+    // good 
+    <toh-hero-button></toh-hero-button>
+    ```
+
+  * **Rule:** Extract templates and styles into a separate file, when more then 3 lines.
+  * **Reason:** Large, inline templates and styles obscure the component's purpose and implementation, reducing readability and maintainability.
+
+    ```ts
+    // bad
+    @Component({
+      selector: 'toh-heroes',
+      template: `
+        <div>
+          <h2>My Heroes</h2>
+          <ul class="heroes">
+            <li *ngFor="let hero of heroes | async" (click)="selectedHero=hero">
+              <span class="badge">{{hero.id}}</span> {{hero.name}}
+            </li>
+          </ul>
+          <div *ngIf="selectedHero">
+            <h2>{{selectedHero.name | uppercase}} is my hero</h2>
+          </div>
+        </div>
+      `,
+      styles: [`
+        .heroes { ... }
+        .heroes li { ... }
+        .heroes .badge { ... }
+      `]
+    })
+    export class HeroesComponent {
+      heroes: Observable<Hero[]>;
+      selectedHero!: Hero;
+
+      constructor(private heroService: HeroService) {
+        this.heroes = this.heroService.getHeroes();
+      }
+    }
+
+    // good
+    @Component({
+      selector: 'toh-heroes',
+      templateUrl: './heroes.component.html',
+      styleUrls:  ['./heroes.component.css']
+    })
+    export class HeroesComponent {
+      heroes: Observable<Hero[]>;
+      selectedHero!: Hero;
+
+      constructor(private heroService: HeroService) {
+        this.heroes = this.heroService.getHeroes();
+      }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+  * **Rule:** Place properties up top in the file, followed by methods. Private members go after the public members, alphebetized.
+  * **Reason:** Consistency in the sequence helps with readability.
+
+    ```ts
+    // bad
+    export class ToastComponent implements OnInit {
+      // properties and fields mixed up
+      private defaults = { ... };
+      message: string;
+      title: string;
+      private toastElement: any;
+
+      // public and private methods mixed up
+      ngOnInit() { ... }
+      private hide() { ... }
+      activate(message = this.defaults.message, title = this.defaults.title) { ... }
+      private show() { ... }
+    }
+
+    // good
+    export class ToastComponent implements OnInit {
+      // public properties
+      message = '';
+      title = '';
+
+      // private fields
+      private defaults = { ... };
+      private toastElement: any;
+
+      // public methods
+      activate(message = this.defaults.message, title = this.defaults.title) { ... }
+      ngOnInit() { ...  }
+
+      // private methods
+      private hide() { ... }
+      private show() { ... }
+    }
+    ```
+
+  * **Rules:** 
+      * Limit logic in a component to only that required for the view. All other logic should be delegated to services. 
+      * Move reusable logic to services and keep components simple and focused on their intended purpose.
+  * **Reason:** More easily reusable logic that can be more easily isolated for unit testing.
+
+    ```ts
+    // bad
+    export class HeroListComponent implements OnInit {
+      heroes: Hero[];
+      constructor(private http: HttpClient) {}
+      getHeroes() {
+        this.heroes = [];
+        this.http.get(heroesUrl).pipe(
+          catchError(this.catchBadResponse),
+          finalize(() => this.hideSpinner())
+        ).subscribe((heroes: Hero[]) => this.heroes = heroes);
+      }
+      ngOnInit() {
+        this.getHeroes();
+      }
+
+      private catchBadResponse(err: any, source: Observable<any>) { ... }
+      private hideSpinner() { ... }
+    }
+    
+    // good
+    import { Component, OnInit } from '@angular/core';
+    // put logic in the service and import it
+    import { Hero, HeroService } from '../shared';
+
+    @Component({ ... })
+    export class HeroListComponent implements OnInit {
+      heroes: Hero[] = [];
+      constructor(private heroService: HeroService) {}
+      getHeroes() {
+        this.heroes = [];
+        this.heroService.getHeroes()
+          .subscribe(heroes => this.heroes = heroes);
+      }
+      ngOnInit() {
+        this.getHeroes();
+      }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Services
+
+  * **Rules:** 
+      * Use services as singletons within the same injector. Use them for sharing data and functionality.
+      * Maintain single responsibility encapsulated by context in services.
+      * Provide services in the root injector in the `@Injectable` decorator of the service
+  * **Reason:** Services are ideal for sharing methods, instances, and stateful in-memory data.
+
+**[⬆ back to top](#table-of-contents)**
+
+## Lifecycle Hooks
+
+  * **Rule:** Implement lifecycle hooks interfaces.
+  * **Reason:** It helps with flagging misspellings or syntax errors.
+
+    ```ts
+    // bad
+    export class HeroButtonComponent {
+      onInit() { // misspelled
+        console.log('The component is initialized');
+      }
+    }
+
+    // good
+    export class HeroButtonComponent implements OnInit {
+      ngOnInit() {
+        console.log('The component is initialized');
+      }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
 
 # C# Style Guide
 
