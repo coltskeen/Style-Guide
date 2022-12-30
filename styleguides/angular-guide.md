@@ -10,7 +10,7 @@
   <h2 align="center">A Hobbit's Developer Angular Style Guide</h2>
 
   <p align="center">
-    A style guide for the layman developer.You want the spark notes? You got it! **In Development**
+    A style guide for the layman developer.You want the spark notes? You got it!
     <br />
     <a href="https://github.com/coltskeen/Style-Guide">Style Guide Overview</a>
     ·
@@ -27,14 +27,9 @@
 <details>
   <summary id="table-of-contents">Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <ul>
-      <li><a href="#note-on-consistency">Note on Consistency</a></li>
-    </ul>
     <li><a href="#angular-style-guide">Angular Style Guide</a></li>
       <ul>
+        <li><a href="#note-on-consistency">Note on Consistency</a></li>
         <li><a href="#single-responsibility-principle">Single Responsibility Principle</a></li>
         <li><a href="#angular-naming-conventions">Angular Naming Conventions</a></li>
         <li><a href="#application-structure">Application Structure</a></li>
@@ -48,23 +43,15 @@
   </ol>
 </details>
 
+# Angular Style Guide
 
-
-<!-- ABOUT THE PROJECT -->
-# About The Project
-
-Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
+This section is derived from the official [Angular Style Guide](https://angular.io/guide/styleguide). It contains highlights that Angular developers should consider following - unless you have a significant reason to deviate. Again this is not comprehensive of all rules recommended in the official style guide but the spark notes version. 
 
 ## Note on Consistency
 
 For any style question that isn't settled definitively by this styleguide, do what the other code in the same file is already doing (be consistent). If that doesn't resolve the question, consider emulating the other files in the same directory. At all times, remember that code reviewers should not focus on simply enforcing the rules in this styleguide, but instead focus on improving overall code quality.
 
-
 **[⬆ back to top](#table-of-contents)**
-
-# Angular Style Guide
-
-This section is derived from the official [Angular Style Guide](https://angular.io/guide/styleguide). It contains highlights that Angular developers should consider following - unless you have a significant reason to deviate. Again this is not comprehensive of all rules recommended in the official style guide but the spark notes version. 
 
 ## Single Responsibility Principle
 

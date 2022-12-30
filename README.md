@@ -10,7 +10,7 @@
   <h2 align="center">A Hobbit's Developer Style Guide</h2>
 
   <p align="center">
-    A style guide for the layman developer. **In Development**
+    A style guide for the layman developer. You want the spark notes? You got it!
     <br />
     <a href="https://github.com/coltskeen/Style-Guide/issues">Report Bug</a>
     ·
@@ -103,12 +103,15 @@ If you want a monolith guide that has the previous guides combined into one sear
   - [Angular Style Guide](https://angular.io/guide/styleguide)
   - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
   - [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+  - [C# Coding Style](https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md)
+  - [C# at Google Style Guide](https://google.github.io/styleguide/csharp-style.html)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
 **Further Reading**
 
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
+  - [Scripting Best Practices](https://devblogs.microsoft.com/scripting/tag/best-practices/)
 
 **Books**
 

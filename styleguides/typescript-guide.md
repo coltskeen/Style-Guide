@@ -10,7 +10,7 @@
   <h2 align="center">A Hobbit's Developer TypeScript Style Guide</h2>
 
   <p align="center">
-    A style guide for the layman developer. You want the spark notes? You got it! **In Development**
+    A style guide for the layman developer. You want the spark notes? You got it!
     <br />
     <a href="https://github.com/coltskeen/Style-Guide">Style Guide Overview</a>
     ·
@@ -27,14 +27,9 @@
 <details>
   <summary id="table-of-contents">Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <ul>
-      <li><a href="#note-on-consistency">Note on Consistency</a></li>
-    </ul>
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
+        <li><a href="#note-on-consistency">Note on Consistency</a></li>
         <li><a href="#naming-conventions">Naming Conventions</a></li>
         <li><a href="#comments">Comments</a></li>
         <li><a href="#variables">Variables</a></li>
@@ -52,23 +47,15 @@
   </ol>
 </details>
 
+# TypeScript Style Guide
 
-
-<!-- ABOUT THE PROJECT -->
-# About The Project
-
-Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
+The information in this section is derived from the official [Google TypeScript Guide](https://google.github.io/styleguide/tsguide.html), the [AirBnb style guide](https://github.com/airbnb/javascript), and the [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/styleguide) styleguide. This guide contains highlights of the common rules and patterns that a developer should consider following - or have a really good reason as to why they are breaking from the norm. 
 
 ## Note on Consistency
 
 For any style question that isn't settled definitively by this styleguide, do what the other code in the same file is already doing (be consistent). If that doesn't resolve the question, consider emulating the other files in the same directory. At all times, remember that code reviewers should not focus on simply enforcing the rules in this styleguide, but instead focus on improving overall code quality.
 
-
 **[⬆ back to top](#table-of-contents)**
-
-# TypeScript Style Guide
-
-The information in this section is derived from the official [Google TypeScript Guide](https://google.github.io/styleguide/tsguide.html), the [AirBnb style guide](https://github.com/airbnb/javascript), and the [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/styleguide) styleguide. This guide contains highlights of the common rules and patterns that a developer should consider following - or have a really good reason as to why they are breaking from the norm. 
 
 ## Naming Conventions
 
@@ -156,6 +143,15 @@ The information in this section is derived from the official [Google TypeScript 
         this.sum = 0;
       }
     }
+    ```
+
+  * **Rules:**
+      * Place the comment on a separate line, not at the end of a line of code.
+      * Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.
+  * **Reason:** Consistency and yes... even readability!
+
+    ```ts
+    // The following declaration creates a query.
     ```
 
 **[⬆ back to top](#table-of-contents)**

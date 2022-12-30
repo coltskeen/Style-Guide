@@ -10,7 +10,7 @@
   <h2 align="center">A Hobbit's Developer Style Guide</h2>
 
   <p align="center">
-    A style guide for the layman developer. **In Development**
+    A style guide for the layman developer. You want the spark notes? You got it!
     <br />
     <a href="https://github.com/coltskeen/Style-Guide">Style Guide Overview</a>
     ·
@@ -61,6 +61,14 @@
         <li><a href="#layout-conventions">Layout Conventions</a></li>
         <li><a href="#commenting-conventions">Commenting Conventions</a></li>
         <li><a href="#language-guidelines">Language Guidelines</a></li>
+          <ul>
+            <li><a href="#implicit-types">Implicit Types</a></li>
+            <li><a href="#exception-handling-syntax">Exception Handling Syntax</a></li>
+            <li><a href="#operators">&&, ||, and new Operators</a></li>
+            <li><a href="#linq-queries">LINQ Queries</a></li>
+            <li><a href="#dotnet-coding-style">Dotnet Coding Style</a></li>
+            <li><a href="#array-vs-list">Array vs List</a></li>
+          </ul>
       </ul>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
@@ -172,6 +180,15 @@ The information in this section is derived from the official [Google TypeScript 
         this.sum = 0;
       }
     }
+    ```
+
+  * **Rules:**
+      * Place the comment on a separate line, not at the end of a line of code.
+      * Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.
+  * **Reason:** Consistency and yes... even readability!
+
+    ```ts
+    // The following declaration creates a query.
     ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -834,6 +851,8 @@ _Figure 1: Example Folder Stucture:_
 
 This section is derived from the official [Microsoft C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/). It contains highlights that C# developers should consider following - unless you have a significant reason to deviate. Again this is not comprehensive of all rules recommended in the official documentation but the spark notes version. 
 
+  * **#1 Rule:** Use Visual Studio Defaults!"
+
 ## C♯ Naming Conventions
 
   * **Rule:** Use `PascalCase` when naming a `class`, `record`, or `struct`.
@@ -969,14 +988,294 @@ This section is derived from the official [Microsoft C# Documentation](https://l
 
 ## Commenting Conventions
 
-  * **Rule:** See TypeScript commenting conventions above or follow your companies guidelines. The key here is to be consistent in how you comment.
-  * **Reason:** Consistency and yes... readability!
+  * **Rules:** 
+      * Use `/** JSDoc */` comments for documentation and multi-line comments, i.e. comments a user of the code should read.
+      * Use `// line comments` for implementation comments and single-line comments, i.e. comments that only concern the implementation of the code itself.
+  * **Reason:** JSDoc comments are understood by tools (such as editors and documentation generators), while ordinary comments are only for other humans.
+
+    ```ts
+    /**
+     * Multiple lines of JSDoc text are written here,
+      * wrapped normally.
+      * @param {number} arg A number to do something to.
+      */
+      function doSomething(arg) { … }
+    ```
+
+  * **Rule:** Start all comments with a space.
+  * **Reason:** It's easier to read.
+
+    ```ts
+    //bad
+    const boolean = true;
+
+    // good
+    const boolean = true;
+    ```
+
+  * **Rule:** Use `// FIXME:` to annotate problems that need to be figured out and `// TODO:` to annotate solutions to problems that need to be implemented.
+  * **Reason:** Help other developers quickly understand whether you're pointing out a problem that needs to be revisited or suggesting a solution that needs implementing.
+
+    ```ts
+    class Calculator extends Abacus {
+      constructor() {
+        super();
+
+        // FIXME: shouldn’t use a global here
+        total = 0;
+
+        // TODO: sum should be configurable by an options param
+        this.sum = 0;
+      }
+    }
+    ```
+
+  * **Rules:**
+      * Place the comment on a separate line, not at the end of a line of code.
+      * Insert one space between the comment delimiter (//) and the comment text, as shown in the following example.
+  * **Reason:** Consistency and yes... even readability!
+
+    ```c#
+    // The following declaration creates a query.
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Language Guidelines
 
+### Implicit Types
 
+  * **Rules:** 
+      * Use implicit typing for local variables when the type of the variable is obvious from the right side of the assignment, or when the precise type is not important.
+      * Don't use `var` when the type is not apparent from the right side of the assignment. A variable type is considered clear if it's a new operator or an explicit cast.
+      * Don't rely on the variable name to specify the type of the variable. It might not be correct and can be misleading.
+      * Use implicit typing in `for` loops but not `foreach` loops. 
+  * **Reason:** Avoiding unecessary code and code clarity.
+
+    ```c#
+    // unnecessary
+    string var = "This is clearly a string.";
+    int var = 27;
+
+    // good
+    var var1 = "This is clearly a string.";
+    var var2 = 27;
+
+    // bad - not a new operator or explicit cast
+    var var3 = Convert.ToInt32(Console.ReadLine()); 
+    var var4 = ExampleClass.ResultSoFar();
+
+    // good
+    int var3 = Convert.ToInt32(Console.ReadLine()); 
+    int var4 = ExampleClass.ResultSoFar();
+
+    // bad - misleading
+    var inputInt = Console.ReadLine();
+
+    // good
+    string input = Console.ReadLine();
+
+    // bad - unecessary
+    for (int i = 0; i < 10000; i++)
+    { ... }
+
+    // good
+    for (var i = 0; i < 10000; i++)
+    { ... }
+
+    // bad - type isn't obvious for implicit typing
+    foreach (var ch in laugh)
+    { ... }
+
+    // good
+    foreach (char ch in laugh)
+    { ... }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+### Exception Handling Syntax
+
+
+  * **Rule:** Use a try-catch statement for most exception handling.
+  * **Reason:** C# Convention! Ensures consistency.
+
+    ```c#
+    // good
+    static string GetValueFromArray(string[] array, int index)
+    {
+        try
+        {
+            return array[index];
+        }
+        catch (System.IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("Index is out of range: {0}", index);
+            throw;
+        }
+    }
+    ```
+
+  * **Rule:** Simplify your code by using the C# `using` statement. If you have a `try`-`finally` statement in which the only code in the `finally` block is a call to the `Dispose` method, use a using statement instead.
+  * **Reason:** Conde simplicity helps with code readability.
+
+    ```c#
+    // good
+    Font font1 = new Font("Arial", 10.0f);
+    try
+    {
+        byte charset = font1.GdiCharSet;
+    }
+    finally
+    {
+        if (font1 != null)
+        {
+            ((IDisposable)font1).Dispose();
+        }
+    }
+
+    // better
+    using (Font font2 = new Font("Arial", 10.0f))
+    {
+        byte charset2 = font2.GdiCharSet;
+    }
+
+    // best
+    using Font font3 = new Font("Arial", 10.0f);
+    byte charset3 = font3.GdiCharSet;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+### Operators
+
+  * **Rule:** Use the `&&` and `||` operators instead of `&` and `|`.
+  * **Reason:** This avoids unnecessary exceptions and increases performance by skipping the unnecessary comparisons.
+
+    ```c#
+    // bad - will cause a run-time error if divisor is 0
+    if ((divisor != 0) & (dividend / divisor > 0))
+    { ... }
+    else
+    { ... }
+
+    // good
+    if ((divisor != 0) && (dividend / divisor > 0))
+    { ... }
+    else
+    { ... }
+    ```
+
+  * **Rule:** Use the concise for of object instantiation with the `new` operator
+  * **Reason:** Simplicity!
+
+    ```c#
+    // unnecessary
+    ExampleClass instance2 = new ExampleClass();
+
+    // better (if C# 8-)
+    var instance1 = new ExampleClass();
+
+    // best (C# 9+)
+    ExampleClass instance2 = new();
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+### LINQ Queries
+
+  * **Rules:** 
+      * Use clear query names and aliases.
+      * Use camelCasing for query names and PascalCasing for aliases.
+      * Use implicit typing in the declaration of query variables.
+      * Align the query clauses under the `from` clause.
+  * **Reason:** Promotes code readability.
+
+    ```c#
+    // good
+    var localDistributors = from customer in customers
+                            join distributor in distributors on customer.City equals distributor.City
+                            select new { Customer = customer, Distributor = distributor };
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+### Dotnet Coding Style
+
+  * **Rules:** 
+      * Use [Allman style](https://en.wikipedia.org/wiki/Indentation_style#Allman_style) braces, where each brace begins on a new line.
+      * Avoid `this.` unless absolutely necessary.
+      * Avoid more than one empty line at any time. For example, do not have two blank lines between members of a type.
+      * When using a single-statement `if`, never use single-line form (for example: `if (source == null) throw new ArgumentNullException("source");`).
+
+_Example File_
+
+    ```c#
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+    using System.Diagnostics;
+    using Microsoft.Win32;
+
+    namespace System.Collections.Generic
+    {
+        public partial class ObservableLinkedList<T> : INotifyCollectionChanged, INotifyPropertyChanged
+        {
+            private ObservableLinkedListNode<T> _head;
+            private int _count;
+
+            public ObservableLinkedList(IEnumerable<T> items)
+            {
+                if (items == null)
+                    throw new ArgumentNullException(nameof(items));
+
+                foreach (T item in items)
+                {
+                    AddLast(item);
+                }
+            }
+
+            public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+            public int Count
+            {
+                get { return _count; }
+            }
+
+            public ObservableLinkedListNode AddLast(T value)
+            {
+                var newNode = new LinkedListNode<T>(this, value);
+
+                InsertNodeBefore(_head, node);
+            }
+
+            protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+            {
+                NotifyCollectionChangedEventHandler handler = CollectionChanged;
+                if (handler != null)
+                {
+                    handler(this, e);
+                }
+            }
+
+            private void InsertNodeBefore(LinkedListNode<T> node, LinkedListNode<T> newNode)
+            {
+                ...
+            }
+
+            ...
+        }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+### Array vs List
+
+  * **Rule:** Prefer `List<>` over arrays except when the size of the container is fixed and known at construction time or for multidimensional arrays.
+  * **Reason:** `List<>` is more flexible then arrays as arrays are of fixed capacity.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1008,12 +1307,15 @@ This section is derived from the official [Microsoft C# Documentation](https://l
   - [Angular Style Guide](https://angular.io/guide/styleguide)
   - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
   - [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+  - [C# Coding Style](https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md)
+  - [C# at Google Style Guide](https://google.github.io/styleguide/csharp-style.html)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
 **Further Reading**
 
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
+  - [Scripting Best Practices](https://devblogs.microsoft.com/scripting/tag/best-practices/)
 
 **Books**
 
