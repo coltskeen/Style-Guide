@@ -34,6 +34,7 @@
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/angular-guide.md">Angular Style Guide</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md">C♯ Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Combined-Styleguide.md">Combined Style Guide</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
     <li><a href="#amendments">Amendments</a></li>
@@ -46,6 +47,8 @@
 # About The Project
 
 Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
+
+Note that this guide is a combination of the three individual style guides located under the Styleguides folder. I have included this behemoth for those that desire to have them all together on one searchable document.
 
 ## Note on Consistency
 
@@ -65,6 +68,10 @@ The Angular guide can be found here: [Angular Style Guide](https://github.com/co
 # C♯ Style Guide
 
 The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md).
+
+# Combined Style Guide
+
+If you want a monolith guide that has the previous guides combined into one searchable document, it can be found here: [Combined Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Combined-Styleguide.md).
 
 **[⬆ back to top](#table-of-contents)**
 

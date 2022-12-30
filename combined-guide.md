@@ -12,6 +12,8 @@
   <p align="center">
     A style guide for the layman developer. **In Development**
     <br />
+    <a href="https://github.com/coltskeen/Style-Guide">Style Guide Overview</a>
+    ·
     <a href="https://github.com/coltskeen/Style-Guide/issues">Report Bug</a>
     ·
     <a href="https://github.com/coltskeen/Style-Guide/issues">Request Feature</a>
