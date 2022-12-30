@@ -27,12 +27,8 @@
 <details>
   <summary id="table-of-contents">Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <ul>
-      <li><a href="#note-on-consistency">Note on Consistency</a></li>
-    </ul>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#note-on-consistency">Note on Consistency</a></li>
     <li><a href="#typescript-style-guide">TypeScript Style Guide</a></li>
       <ul>
         <li><a href="#naming-conventions">Naming Conventions</a></li>
@@ -83,7 +79,7 @@
 
 Ever find yourself scouring the multiple style guides and github repos to ensure your code is crafted with the expertise of wizard, only to get lost in the mass of detailed information that 80% of your layman work needs not to worry about? Well scour no more. This layman's style guide is the one to rule them all by bringing to you what you need most for your day-to-day adventures meandering through the highways and byways of Middle Earth (or in this case the inter-webs), easily searchable to make your magical code just right.
 
-## Note on Consistency
+# Note on Consistency
 
 For any style question that isn't settled definitively by this styleguide, do what the other code in the same file is already doing (be consistent). If that doesn't resolve the question, consider emulating the other files in the same directory. At all times, remember that code reviewers should not focus on simply enforcing the rules in this styleguide, but instead focus on improving overall code quality.
 

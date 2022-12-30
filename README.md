@@ -25,12 +25,8 @@
 <details>
   <summary id="table-of-contents">Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <ul>
-      <li><a href="#note-on-consistency">Note on Consistency</a></li>
-    </ul>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#note-on-consistency">Note on Consistency</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/angular-guide.md">Angular Style Guide</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/c%23-guide.md">C♯ Style Guide</a></li>
@@ -50,7 +46,7 @@ Ever find yourself scouring the multiple style guides and github repos to ensure
 
 Note that this guide is a combination of the three individual style guides located under the Styleguides folder. I have included this behemoth for those that desire to have them all together on one searchable document.
 
-## Note on Consistency
+# Note on Consistency
 
 For any style question that isn't settled definitively by this styleguide, do what the other code in the same file is already doing (be consistent). If that doesn't resolve the question, consider emulating the other files in the same directory. At all times, remember that code reviewers should not focus on simply enforcing the rules in this styleguide, but instead focus on improving overall code quality.
 
