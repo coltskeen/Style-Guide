@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h2 align="center">A Hobbit's Developer Style Guide</h2>
@@ -31,9 +31,9 @@
     <ul>
       <li><a href="#note-on-consistency">Note on Consistency</a></li>
     </ul>
-    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
-    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/angular-guide.md">Angular Style Guide</a></li>
-    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md">C♯ Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/angular-guide.md">Angular Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/styleguides/c%23-guide.md">C♯ Style Guide</a></li>
     <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Combined-Styleguide.md">Combined Style Guide</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
@@ -59,15 +59,15 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
 # TypeScript Style Guide
 
-The TypeScript guide can be found here: [TypeScript Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/typescript-guide.md).
+The TypeScript guide can be found here: [TypeScript Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/styleguides/typescript-guide.md).
 
 # Angular Style Guide
 
-The Angular guide can be found here: [Angular Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/angular-guide.md).
+The Angular guide can be found here: [Angular Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/styleguides/angular-guide.md).
 
 # C♯ Style Guide
 
-The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md).
+The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/styleguides/c%23-guide.md).
 
 # Combined Style Guide
 

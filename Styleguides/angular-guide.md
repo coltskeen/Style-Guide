@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="../images/logo.png" alt="Logo" width="80" height="80">
+    <img src="../assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h2 align="center">A Hobbit's Developer Angular Style Guide</h2>
@@ -180,7 +180,7 @@ This section is derived from the official [Angular Style Guide](https://angular.
 
 _Figure 1: Example Folder Stucture:_
 
-  ![Compliant Folder Structure Example](../images/AngularFolderStructure.PNG)
+  ![Compliant Folder Structure Example](../assets/AngularFolderStructure.PNG)
 
 
 **[⬆ back to top](#table-of-contents)**
