@@ -1007,11 +1007,6 @@ This section is derived from the official [Microsoft C# Documentation](https://l
   - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
-**Other Styles**
-
-  - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
-
 **Further Reading**
 
   - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
@@ -1023,6 +1018,9 @@ This section is derived from the official [Microsoft C# Documentation](https://l
   - [Effective TypeScript](https://effectivetypescript.com/) - Dan Vanderkam
   - [Essential TypeScript 4](https://www.amazon.com/Essential-TypeScript-4-Beginner-Pro/dp/148427010X) - Adam Freeman
   - [Eloquent JavaScript](https://eloquentjavascript.net/) - Marijn Haverbeke
+  - [Angular - The Complete Guide](https://www.oreilly.com/library/view/angular-the/9781788998437/) - Maximilian Schwarzmuller
+  - [C# 8.0 and .NET Core 3.0](https://www.amazon.com/8-0-NET-Core-3-0-Cross-Platform-ebook/dp/B07YLXFGBS?tag=guru990f-20&geniuslink=true) - Mark Price
+  - [C# 8.0 Pocket Reference: Instant Help for C# 8.0 Programmers](https://www.amazon.com/8-0-Pocket-Reference-Instant-Programmers/dp/1492051217?tag=guru990f-20&geniuslink=true) - Jospeh Albahari 
 
 
 **[⬆ back to top](#table-of-contents)**

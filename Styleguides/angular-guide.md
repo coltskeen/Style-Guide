@@ -12,6 +12,8 @@
   <p align="center">
     A style guide for the layman developer.You want the spark notes? You got it! **In Development**
     <br />
+    <a href="https://github.com/coltskeen/Style-Guide">Style Guide Overview</a>
+    ·
     <a href="https://github.com/coltskeen/Style-Guide/issues">Report Bug</a>
     ·
     <a href="https://github.com/coltskeen/Style-Guide/issues">Request Feature</a>
@@ -371,23 +373,10 @@ _Figure 1: Example Folder Stucture:_
 
 # Resources
 
-
-**Read This**
-
-  - [Standard ECMA-262](https://www.ecma-international.org/ecma-262/6.0/index.html)
-  - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-  - [C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/?WT.mc_id=dotnet-35129-website)
-
 **Tools**
 
   - Code Style Linter - [ESlint](https://eslint.org/)
-  - Partner Server-side Framework - [NestJs](https://docs.nestjs.com/)
   - Client-side Framework - [Angular](https://angular.io/docs)
-  - Internal Server-side Frameworks
-    - [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/)
-    - [ASP.NET](https://learn.microsoft.com/en-us/aspnet/core/?WT.mc_id=dotnet-35129-website&view=aspnetcore-7.0)
-  - Nest Testing
-    - [Jest](https://jestjs.io/docs/getting-started)
   - Angular Testing
     - [Karma](https://angular.io/guide/testing)
     - [Jasmine](https://jasmine.github.io/pages/docs_home.html)
@@ -395,25 +384,14 @@ _Figure 1: Example Folder Stucture:_
 **Other Style Guides**
 
   - [Angular Style Guide](https://angular.io/guide/styleguide)
-  - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
-
-**Other Styles**
-
-  - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
 
 **Further Reading**
 
-  - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
   - [Frontend Guidelines](https://github.com/bendc/frontend-guidelines) - Benjamin De Cock
 
 **Books**
 
-  - [Advanced TypeScript Programming Projects](https://www.amazon.com/Advanced-TypeScript-Programming-Projects-JavaScript-ebook/dp/B07R8MB288) - Peter O'Hanlon
-  - [Effective TypeScript](https://effectivetypescript.com/) - Dan Vanderkam
-  - [Essential TypeScript 4](https://www.amazon.com/Essential-TypeScript-4-Beginner-Pro/dp/148427010X) - Adam Freeman
-  - [Eloquent JavaScript](https://eloquentjavascript.net/) - Marijn Haverbeke
+  - [Angular - The Complete Guide](https://www.oreilly.com/library/view/angular-the/9781788998437/) - Maximilian Schwarzmuller
 
 
 **[⬆ back to top](#table-of-contents)**
