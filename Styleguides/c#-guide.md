@@ -60,7 +60,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
 
 
-## Resources
+# Resources
 
 
 **Read This**
@@ -109,13 +109,13 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
 **[⬆ back to top](#table-of-contents)**
 
-## Copyright
+# Copyright
 
 Copyright (c) 2022 The Wizard
 
 **[⬆ back to top](#table-of-contents)**
 
-## Amendments
+# Amendments
 
 To propose changes to this style guide please submit a pull request for peer review.
 

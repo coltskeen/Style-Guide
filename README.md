@@ -31,9 +31,9 @@
     <ul>
       <li><a href="#note-on-consistency">Note on Consistency</a></li>
     </ul>
-    <li><a href="https://github.com/coltskeen/Style-Guide/styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
-    <li><a href="https://github.com/coltskeen/Style-Guide/styleguides/angular-guide.md">Angular Style Guide</a></li>
-    <li><a href="https://github.com/coltskeen/Style-Guide/styleguides/c#-guide.md">C♯ Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/typescript-guide.md">TypeScript Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/angular-guide.md">Angular Style Guide</a></li>
+    <li><a href="https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md">C♯ Style Guide</a></li>
     <li><a href="#resources">Resources</a></li>
     <li><a href="#copyright">Copyright</a></li>
     <li><a href="#amendments">Amendments</a></li>
@@ -56,15 +56,15 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
 # TypeScript Style Guide
 
-The TypeScript guide can be found here: [TypeScript Style Guide](https://github.com/coltskeen/Style-Guide/styleguides/typescript-guide.md).
+The TypeScript guide can be found here: [TypeScript Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/typescript-guide.md).
 
 # Angular Style Guide
 
-The Angular guide can be found here: [Angular Style Guide](https://github.com/coltskeen/Style-Guide/styleguides/angular-guide.md).
+The Angular guide can be found here: [Angular Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/angular-guide.md).
 
 # C♯ Style Guide
 
-The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskeen/Style-Guide/styleguides/c#-guide.md).
+The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskeen/Style-Guide/blob/master/Styleguides/c%23-guide.md).
 
 **[⬆ back to top](#table-of-contents)**
 

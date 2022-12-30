@@ -504,7 +504,7 @@ The information in this section is derived from the official [Google TypeScript 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Resources
+# Resources
 
 
 **Read This**
@@ -553,13 +553,13 @@ The information in this section is derived from the official [Google TypeScript 
 
 **[⬆ back to top](#table-of-contents)**
 
-## Copyright
+# Copyright
 
 Copyright (c) 2022 The Wizard
 
 **[⬆ back to top](#table-of-contents)**
 
-## Amendments
+# Amendments
 
 To propose changes to this style guide please submit a pull request for peer review.
 
