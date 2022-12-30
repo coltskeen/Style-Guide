@@ -513,17 +513,14 @@ The information in this section is derived from the official [Google TypeScript 
 
   - [Standard ECMA-262](https://www.ecma-international.org/ecma-262/6.0/index.html)
   - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+  - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
+  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
 **Tools**
 
   - Code Style Linter - [ESlint](https://eslint.org/)
   - Partner Server-side Framework - [NestJs](https://docs.nestjs.com/)
   - Nest Testing - [Jest](https://jestjs.io/docs/getting-started)
-
-**Other Style Guides**
-
-  - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
 **Further Reading**
 

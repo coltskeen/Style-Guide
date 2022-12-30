@@ -373,6 +373,10 @@ _Figure 1: Example Folder Stucture:_
 
 # Resources
 
+**Read This**
+
+  - [Angular Style Guide](https://angular.io/guide/styleguide)
+
 **Tools**
 
   - Code Style Linter - [ESlint](https://eslint.org/)
@@ -380,10 +384,6 @@ _Figure 1: Example Folder Stucture:_
   - Angular Testing
     - [Karma](https://angular.io/guide/testing)
     - [Jasmine](https://jasmine.github.io/pages/docs_home.html)
-
-**Other Style Guides**
-
-  - [Angular Style Guide](https://angular.io/guide/styleguide)
 
 **Further Reading**
 

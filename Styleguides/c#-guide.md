@@ -68,6 +68,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
 **Read This**
 
   - [C# Documentation](https://learn.microsoft.com/en-us/dotnet/csharp/?WT.mc_id=dotnet-35129-website)
+  - [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
 
 **Tools**
 

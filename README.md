@@ -91,10 +91,11 @@ The C♯ guide can be found here: [C♯ Style Guide](https://github.com/coltskee
     - [Karma](https://angular.io/guide/testing)
     - [Jasmine](https://jasmine.github.io/pages/docs_home.html)
 
-**Other Style Guides**
+**Style Guides**
 
   - [Angular Style Guide](https://angular.io/guide/styleguide)
   - [Google Typescript Style Guide](https://google.github.io/styleguide/tsguide.html)
+  - [C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 
 **Further Reading**
