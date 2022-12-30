@@ -967,7 +967,8 @@ This section is derived from the official [Microsoft C# Documentation](https://l
 
 ## Commenting Conventions
 
-
+  * **Rule:** See TypeScript commenting conventions above or follow your companies guidelines. The key here is to be consistent in how you comment.
+  * **Reason:** Consistency and yes... readability!
 
 **[⬆ back to top](#table-of-contents)**
 
