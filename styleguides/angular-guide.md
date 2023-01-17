@@ -55,7 +55,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
 ## Single Responsibility Principle
 
-  * **Rule:** Define one thing, such as a service or component, per file, and consider limiting files to 400 lines of code.
+  * **Rule:** Define one thing, such as a service or component, per file, and consider limiting files to 300 lines of code.
   * **Reason:** Avoids bugs and makes code easier to read and maintain.
 
     ```ts
@@ -69,10 +69,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
     @Component({
       selector: 'app-root',
-      template: `
-          <h1>{{title}}</h1>
-          <pre>{{heroes | json}}</pre>
-        `,
+      templateUrl: './hero-button.component.html'
       styleUrls: ['app/app.component.css']
     })
     class AppComponent implements OnInit {
@@ -86,7 +83,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
     }
     ```
 
-  * **Rule:** Keep functions small. Consider limiting them to no more than 75 lines.
+  * **Rule:** Keep functions small. Consider limiting them to no more than 30 lines.
   * **Reason:** Avoids bugs and makes code easier to read and maintain.
 
 **[⬆ back to top](#table-of-contents)**
@@ -185,7 +182,7 @@ _Figure 1: Example Folder Stucture:_
     <toh-hero-button></toh-hero-button>
     ```
 
-  * **Rule:** Extract templates and styles into a separate file, when more then 3 lines.
+  * **Rule:** Always extract templates and styles into a separate file.
   * **Reason:** Large, inline templates and styles obscure the component's purpose and implementation, reducing readability and maintainability.
 
     ```ts
@@ -238,7 +235,7 @@ _Figure 1: Example Folder Stucture:_
 
 **[⬆ back to top](#table-of-contents)**
 
-  * **Rule:** Place properties up top in the file, followed by methods. Private members go after the public members, alphebetized.
+  * **Rule:** Place properties up top in the file, followed by methods. Private members go after the public members.
   * **Reason:** Consistency in the sequence helps with readability.
 
     ```ts

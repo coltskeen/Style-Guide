@@ -326,7 +326,7 @@ For any style question that isn't settled definitively by this styleguide, do wh
     ```
 
   * **Rule:** Simplify your code by using the C# `using` statement. If you have a `try`-`finally` statement in which the only code in the `finally` block is a call to the `Dispose` method, use a using statement instead.
-  * **Reason:** Conde simplicity helps with code readability.
+  * **Reason:** Code simplicity helps with code readability.
 
     ```c#
     // good
@@ -413,7 +413,6 @@ For any style question that isn't settled definitively by this styleguide, do wh
 
   * **Rules:** 
       * Use [Allman style](https://en.wikipedia.org/wiki/Indentation_style#Allman_style) braces, where each brace begins on a new line.
-      * Avoid `this.` unless absolutely necessary.
       * Avoid more than one empty line at any time. For example, do not have two blank lines between members of a type.
       * When using a single-statement `if`, never use single-line form (for example: `if (source == null) throw new ArgumentNullException("source");`).
 

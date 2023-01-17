@@ -79,17 +79,17 @@ For any style question that isn't settled definitively by this styleguide, do wh
     Payments nonTypicalMonthlyPayments;
 
     // good 
-    Monster boss; 
-    Payments payments;
+    Monster finalBoss; 
+    Payments nonTypicalPayments;
 
     
     // bad - the type tells us what these variables are:
     String nameString; 
-    List<datetime> holidayDateList;
+    Array<datetime> holidayDateList;
 
     // good
     String name; 
-    List<datetime> holidays;
+    Array<datetime> holidays;
 
     
     // bad - repeating the context:
